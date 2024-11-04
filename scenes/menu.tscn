@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7osfd46lw4ad"]
+[gd_scene load_steps=2 format=3 uid="uid://b1ifl8e4hyaiw"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_limct"]
-[ext_resource type="Texture2D" uid="uid://cbk8s6sg22p1u" path="res://title.png" id="1_rhjd7"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -68,64 +67,6 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
-texture = ExtResource("1_rhjd7")
-
-[node name="CheckboxBackground" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.681
-anchor_right = 0.5
-anchor_bottom = 0.681
-offset_left = -76.0
-offset_top = -60.48
-offset_right = 67.0
-offset_bottom = 59.52
-color = Color(1, 1, 1, 0.133333)
-
-[node name="SurvivalMode" type="CheckBox" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.498
-anchor_top = 0.682
-anchor_right = 0.498
-anchor_bottom = 0.682
-offset_left = -69.16
-offset_top = -18.5601
-offset_right = 68.84
-offset_bottom = 18.4399
-grow_horizontal = 2
-grow_vertical = 0
-text = "Survival Mode"
-
-[node name="EasyMode" type="CheckBox" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.498
-anchor_top = 0.716
-anchor_right = 0.498
-anchor_bottom = 0.716
-offset_left = -67.16
-offset_top = -15.28
-offset_right = 65.84
-offset_bottom = 15.72
-text = "Easy Mode"
-
-[node name="NormalMode" type="CheckBox" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.497
-anchor_top = 0.647
-anchor_right = 0.497
-anchor_bottom = 0.647
-offset_left = -67.24
-offset_top = -15.76
-offset_right = 67.76
-offset_bottom = 15.24
-text = "Normal Mode"
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="toggled" from="SurvivalMode" to="." method="_on_survival_mode_toggled"]
-[connection signal="toggled" from="EasyMode" to="." method="_on_easy_mode_toggled"]
-[connection signal="toggled" from="NormalMode" to="." method="_on_normal_mode_toggled"]

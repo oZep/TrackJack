@@ -14,3 +14,10 @@ config/name="Track Jack"
 run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[input]
+
+pause={
+"deadzone": 0.5,
+"events": []
+}
