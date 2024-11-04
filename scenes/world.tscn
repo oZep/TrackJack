@@ -154,7 +154,7 @@ transform = Transform3D(3.82511, 0, 0, 0, -2.54993e-07, -0.96828, 0, 5.83355, -4
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node/Roof_lamp"]
 transform = Transform3D(1, 0, 0, 0, 0.0104543, 0.999945, 0, -0.999945, 0.0104543, 1.1826, 3.47307, 1.74533)
-light_color = Color(1, 0.207843, 0.286275, 1)
+light_color = Color(0.843137, 0, 0.0823529, 1)
 light_energy = 0.192
 light_indirect_energy = 1.808
 light_volumetric_fog_energy = 0.677

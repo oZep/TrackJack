@@ -5,9 +5,7 @@ extends Node
 @onready var normal_mode = $NormalMode
 
 func _ready():
-	survival_mode.button_pressed = false
-	easy_mode.button_pressed = false
-	normal_mode.button_pressed = true
+	pass
 
 func _on_start_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/world.tscn")
