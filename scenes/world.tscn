@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bfxubpk43tk6s"]
+[gd_scene load_steps=22 format=3 uid="uid://bfxubpk43tk6s"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_nne5v"]
 [ext_resource type="Script" path="res://scripts/hunter.gd" id="4_7xk01"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://kuhts3klviau" path="res://addons/kaykit_restaurant_bits/Assets/gltf/wall.gltf" id="10_ikn1c"]
 [ext_resource type="PackedScene" uid="uid://bpgwqfxpgij7p" path="res://addons/kaykit_restaurant_bits/Assets/gltf/wall_window_open.gltf" id="11_pe4dq"]
 [ext_resource type="PackedScene" uid="uid://lhwleo22kglw" path="res://addons/kaykit_restaurant_bits/Assets/gltf/table_round_A.gltf" id="12_gaxlc"]
+[ext_resource type="PackedScene" uid="uid://kpgspf3o7jit" path="res://addons/monster_alien/scene.gltf" id="13_dp31u"]
 
 [sub_resource type="GDScript" id="GDScript_83fxe"]
 
@@ -26,6 +27,12 @@ albedo_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_twmur"]
 material = SubResource("StandardMaterial3D_ejjvt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s27sx"]
+albedo_color = Color(0, 0.454902, 0.0235294, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a1wa1"]
+material = SubResource("StandardMaterial3D_s27sx")
 
 [node name="World" type="Node3D"]
 script = SubResource("GDScript_83fxe")
@@ -165,6 +172,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.35217, 2.10284, 2.03187, -1.86
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TV"]
 transform = Transform3D(2.57356, 0, 0, 0, 1.49129, 0, 0, 0, 0.252622, 0.578691, 0.0739384, -0.133881)
 mesh = SubResource("BoxMesh_twmur")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("13_dp31u")]
+transform = Transform3D(-0.0855758, -1.15853e-05, 0.0768152, -1.34272e-05, 0.120123, -3.49652e-06, -0.055843, -1.11288e-05, -0.117714, -15.9822, -3.70385, 30.4189)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(24.2745, -0.000114083, -7.44274, -0.00128391, -0.746882, 0.0173945, 5.19045, 0.000348849, 34.8079, -4.42284, -4.12233, 16.4497)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(1, -5.91172e-12, -5.96046e-08, -2.32831e-10, 1, 3.72529e-09, 0, -1.81899e-12, 1, -0.0507273, -0.0385337, 0.0686584)
+mesh = SubResource("BoxMesh_a1wa1")
 
 [connection signal="body_entered" from="Hunter/DeathArea" to="Hunter" method="_on_area_3d_body_entered"]
 [connection signal="pressed" from="PauseMenu/VSplitContainer/Continue" to="PauseMenu" method="_on_continue_pressed"]
